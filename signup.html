@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Signup</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="mainstyle.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+  </head>
+  <body>
+    <section class="container forms">
+    <div class="form signup">
+        <div class="form-content">
+            <header>Signup</header>
+            <form>
+                <div class="field input-field">
+                    <input type="email" placeholder="Email" class="input" id="email" required>
+                </div>
+                <div class="field input-field">
+                    <input type="text" placeholder="Full Name" class="input" id="fullname" required>
+                </div>
+                <div class="field input-field">
+                    <select class="input gender" id="gender" required>
+                      <option value="">Gender</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Prefer not to say</option>
+                    </select>
+                  </div>
+                <div class="field input-field">
+                    <input type="text" placeholder="City" class="input" id="city" required>
+                </div>
+                <div class="field input-field">
+                    <input type="password" placeholder="Password" class="password" id="password" required>
+                </div>
+                <div class="field input-field">
+                    <input type="password" placeholder="Confirm password" class="password" id="confirmpassword" required>
+                    <i class="fa-solid fa-eye-slash eye-icon"></i>
+                </div>
+                <div class="field button-field">
+
+                    <button type="button" onclick="signup()">Signup</button>
+                </div>
+            </form>
+            <div class="form-link">
+                <span>Already have an account? <a href="login.html" class="link login-link">Login</a></span>
+            </div>
+        </div>
+    </section>
+    <script src="signup.js"></script>
+  </body>
+</html>

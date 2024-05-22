@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Product</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="homestyle.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+  </head>
+  <body>
+    <header>
+        <div class="nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4" style="align-self: center">
+                        <h1 id="logo" class="text-sm-center, text-md-left, logo">
+                            <i class="fa-solid fa-bullhorn"></i> ThatsIt.
+                        </h1>
+                    </div>
+                    <div class="col-sm-4">
+                        <ul id="menu" class="text-md-center">
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="login.html">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-4 text-md-end" style="align-self: center">
+                        <i class="fa-solid fa-cart-shopping" id="cart-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2 class="cart-title">Your Cart</h2>
+  
+            <div class="cart-content"></div>
+
+            <div class="total">
+              <div class="total-title">Total</div>
+              <div class="total-price">Rs.0</div>
+            </div>
+  
+            <button type="button" class="btn-buy">Buy Now</button>
+  
+            <i class="fa-solid fa-x" id="cart-close"></i>
+          </div>
+        </div>
+    </header>
+
+    <section class="product-details container">
+        <div class="product-content product-details">
+            <h1 class="section-title">Product Details</h1>
+            <div class="product-info">
+                <div class="detailed-product-img-container zoom">
+                    <img src="" alt="" class="product-img" id="product-img">
+                </div>
+                <div class="detailed-product-details">
+                    <h2 class="product-title" id="product-title">Title:</h2>
+                    <span class="product-price" id="product-price">Price:</span>
+                    <p class="product-description" id="product-description">Description:</p>
+                    <button class="add-to-cart-btn add-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+      // Sample products data array, move this to an external file if needed
+      const products = [
+        { id: 1, name: "iPhone 14 Pro Max", image: "img/product1.jpg", price: "Rs.195000", description: "Description of iPhone 14 Pro Max." },
+        { id: 2, name: "MacBook Air", image: "img/product2.jpg", price: "Rs.235499", description: "Description of MacBook Air." },
+        { id: 3, name: "AirPods Pro 2", image: "img/product3.jpg", price: "Rs.76500", description: "Description of AirPods Pro 2." },
+        { id: 4, name: "AirPods Max", image: "img/product4.jpg", price: "Rs.153499", description: "Description of AirPods Max." },
+        { id: 5, name: "iPad 10th Generation", image: "img/product5.jpg", price: "Rs.182500", description: "Description of iPad 10th Generation." },
+        { id: 6, name: "Vision Pro", image: "img/product6.jpg", price: "Rs.389500", description: "Description of Vision Pro." },
+        { id: 7, name: "Apple TV", image: "img/product7.jpg", price: "Rs.155500", description: "Description of Apple TV." },
+        { id: 8, name: "Apple Watch", image: "img/product8.jpg", price: "Rs.89050", description: "Description of Apple Watch." }
+      ];
+
+      // Function to get the product ID from the URL
+      function getProductIdFromUrl() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        return urlParams.get('id');
+      }
+
+      // Function to populate the product details
+      function populateProductDetails(productId) {
+        const product = products.find(p => p.id == productId);
+        if (product) {
+          document.getElementById("product-img").src = product.image;
+          document.getElementById("product-title").innerHTML = product.name;
+          document.getElementById("product-price").innerHTML = product.price;
+          document.getElementById("product-description").innerHTML = product.description;
+        }
+      }
+
+      // Get the product ID from the URL and populate the details
+      const productId = getProductIdFromUrl();
+      if (productId) {
+        populateProductDetails(productId);
+      }
+    </script>
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

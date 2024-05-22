@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+
+    <link rel="stylesheet" href="mainstyle.css" />
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="fontawesome/css/all.css" />
+  </head>
+  <body>
+    <section class="container forms">
+      <div class="form login">
+        <div class="form-content">
+          <header>Login</header>
+          <form>
+            <div class="field input-field">
+              <input
+                type="email"
+                placeholder="Email"
+                class="input"
+                id="email"
+                required
+              />
+            </div>
+            <div class="field input-field">
+              <input
+                type="password"
+                placeholder="Password"
+                class="password"
+                id="password"
+                required
+              />
+              <i class="fa-solid fa-eye-slash eye-icon"></i>
+            </div>
+            <div class="form-link">
+              <a href="#" onclick="toggleForgotPassword()" class="forgot-pass"
+                >Forgot password?</a
+              >
+            </div>
+            <div class="field button-field">
+              <button type="button" onclick="signin()">Login</button>
+            </div>
+            <div class="form-link">
+              <span
+                >Don't have an account?
+                <a href="signup.html" class="link signup-link">Signup</a></span
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- Forgot password section (initially hidden) -->
+      <div
+        class="form forgot-password"
+        id="forgotPasswordSection"
+        style="display: none"
+      >
+        <div class="form-content">
+          <header>Forgot Password</header>
+          <form>
+            <div class="field input-field">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="input"
+                id="forgotEmail"
+                required
+              />
+            </div>
+            <div class="field input-field">
+              <input
+                type="password"
+                placeholder="New Password"
+                class="input"
+                id="newPassword"
+                required
+              />
+            </div>
+            <div class="field input-field">
+              <input
+                type="password"
+                placeholder="Confirm New Password"
+                class="input"
+                id="confirmPassword"
+                required
+              />
+            </div>
+            <div class="field button-field">
+              <button type="button" onclick="updatePassword()">
+                Update Password
+              </button>
+            </div>
+          </form>
+          <div class="form-link">
+            <a href="#" onclick="toggleForgotPassword()">Back to Login</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="signup.js"></script>
+  </body>
+</html>
