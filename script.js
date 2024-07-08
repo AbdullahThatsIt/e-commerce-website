@@ -89,15 +89,6 @@ function handle_removeCartItem() {
   update();
 }
 
-// function handle_changeItemQuantity() {
-//   if (isNaN(this.value) || this.value < 1) {
-//     this.value = 1;
-//   }
-//   this.value = Math.floor(this.value); // to keep it integer
-
-//   update();
-// }
-
 function handle_buyOrder() {
   if (itemsAdded.length <= 0) {
     alert("There is No Order to Place Yet! \nPlease Make an Order first.");
@@ -112,9 +103,6 @@ function handle_buyOrder() {
 }
 
 // Function to handle quantity increment and decrement
-
-
-// handleQuantityChange();
 
 function handleQuantityChange() {
   // Add event listeners for increment buttons
@@ -148,6 +136,7 @@ function handleQuantityChange() {
 
 // Function to update the total amount in the cart
 function updateTotal() {
+  console.log(products, "productssss")
   let cartBoxes = document.querySelectorAll(".cart-box");
   const totalElement = document.querySelector(".total-price");
   let total = 0;
@@ -299,36 +288,27 @@ function displayProducts() {
 // Call the function to display products when the page loads
 displayProducts();
 
-// const products = [
-//   { id: 1, name: "iPhone 14 Pro Max", image: "img/product1.jpg", price: "Rs.195000", description: "Description of iPhone 14 Pro Max." },
-//   { id: 2, name: "MacBook Air", image: "img/product2.jpg", price: "Rs.235499", description: "Description of MacBook Air." },
-//   { id: 3, name: "AirPods Pro 2", image: "img/product3.jpg", price: "Rs.76500", description: "Description of AirPods Pro 2." },
-//   { id: 4, name: "AirPods Max", image: "img/product4.jpg", price: "Rs.153499", description: "Description of AirPods Max." },
-//   { id: 5, name: "iPad 10th Generation", image: "img/product5.jpg", price: "Rs.182500", description: "Description of iPad 10th Generation." },
-//   { id: 6, name: "Vision Pro", image: "img/product6.jpg", price: "Rs.389500", description: "Description of Vision Pro." },
-//   { id: 7, name: "Apple TV", image: "img/product7.jpg", price: "Rs.155500", description: "Description of Apple TV." },
-//   { id: 8, name: "Apple Watch", image: "img/product8.jpg", price: "Rs.89050", description: "Description of Apple Watch." }
-// ];
-
-// function getProductIdFromUrl() {
-//   const queryString = window.location.search;
-//   const urlParams = new URLSearchParams(queryString);
-//   return urlParams.get('id');
-// }
+function getProductIdFromUrl() {
+  const queryString = window.location.search;
+  const urlParams = new URLSearchParams(queryString);
+  return urlParams.get('id');
+}
 
 
-// function populateProductDetails(productId) {
-//   const product = products.find(p => p.id == productId);
-//   if (product) {
-//     document.getElementById("product-img").src = product.image;
-//     document.getElementById("product-title").innerHTML = product.name;
-//     document.getElementById("product-price").innerHTML = product.price;
-//     document.getElementById("product-description").innerHTML = product.description;
-//   }
-// }
+function populateProductDetails(productId) {
+  console.log(productId, "bxsbxjs");
+  conosle.log(products, "prductsss")
+  const product = products.find(p => p.id == productId);
+  if (product) {
+    document.getElementById("product-img").src = product.image;
+    document.getElementById("product-title").innerHTML = product.name;
+    document.getElementById("product-price").innerHTML = product.price;
+    document.getElementById("product-description").innerHTML = product.description;
+  }
+}
 
-// // Get the product ID from the URL and populate the details
-// const productId = getProductIdFromUrl();
-// if (productId) {
-//   populateProductDetails(productId);
-// }
+// Get the product ID from the URL and populate the details
+const productId = getProductIdFromUrl();
+if (productId) {
+  populateProductDetails(productId);
+}
